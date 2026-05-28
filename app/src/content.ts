@@ -44,7 +44,6 @@ export const profile = {
     'B.S. Computer Science student at Milwaukee School of Engineering with a strong background in AI, robotics, and full-stack development. Continuing to an M.S. in Machine Learning and focused on building practical systems with teammates and independently.',
   availability: 'Available for internships, co-ops, and full-time opportunities',
   email: 'trompeterm@msoe.edu',
-  phone: '(414) 731-1022',
   linkedin: 'https://linkedin.com/in/miles-trompeter/',
 }
 

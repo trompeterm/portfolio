@@ -33,9 +33,6 @@ function App() {
               <a className="button button-secondary" href={profile.linkedin} target="_blank" rel="noreferrer">
                 LinkedIn
               </a>
-              <a className="text-link" href={`tel:${profile.phone.replace(/[^\d+]/g, '')}`}>
-                {profile.phone}
-              </a>
             </div>
 
             <dl className="highlights">
