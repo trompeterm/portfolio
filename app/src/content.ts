@@ -1,13 +1,6 @@
-import check from './assets/check.jpg'
-import grad from './assets/grad.jpg'
-import robot from './assets/robot.jpeg'
-import sit from './assets/sit.jpg'
-import speaking from './assets/speaking.jpg'
-import trees from './assets/trees.jpeg'
-import winners from './assets/winners.jpg'
-
 export type Project = {
   name: string
+  meta: string
   summary: string
   impact: string
   stack: string[]
@@ -31,104 +24,61 @@ export type SkillGroup = {
   items: string[]
 }
 
-export type InlinePhoto = {
-  src: string
-  alt: string
-}
 
 export const profile = {
   name: 'Miles Trompeter',
   title: 'B.S. Computer Science student, future M.S. Machine Learning student',
   location: 'Milwaukee School of Engineering',
   summary:
-    'B.S. Computer Science student at Milwaukee School of Engineering with a strong background in AI, robotics, and full-stack development. Continuing to an M.S. in Machine Learning and focused on building practical systems with teammates and independently.',
+    'B.S. Computer Science student at Milwaukee School of Engineering, continuing into an M.S. in Machine Learning. Developed and deployed systems spanning LLM agents, machine learning, and computer vision. Two first-place finishes in MSOE AI Club’s Innovation Lab competitions, with Data Engineer Intern experience at Brady Corporation.',
   availability: 'Available for internships, co-ops, and full-time opportunities',
   email: 'trompeterm@msoe.edu',
+  github: 'https://github.com/trompeterm',
   linkedin: 'https://linkedin.com/in/miles-trompeter/',
 }
 
 export const highlights = [
   {
     label: 'Focus',
-    value: 'AI, ML, and full-stack development',
+    value: 'LLM agents, machine learning, and computer vision',
   },
   {
     label: 'Strengths',
-    value: 'Python, TypeScript, React, FastAPI, LangGraph',
+    value: 'Python, SQL, PyTorch, Databricks, LangGraph',
   },
   {
     label: 'Involvement',
-    value: 'Active contributor to AI Club and student organizations',
+    value: 'MSOE AI Club Technical Strategist and Mentor',
   },
 ]
 
 export const projects: Project[] = [
   {
-    name: 'Lescribe | MSOE AI Club Innovation Lab Competition (Persistent Systems)',
+    name: 'Product Recommendation System',
+    meta: 'Brady Corporation | Individual project | Summer 2026',
     summary:
-      'Generated ICD-10-CM and CPT medical codes from doctor-patient conversations. Designed a LangGraph agent graph to assign codes. Deployed a Databricks app with dashboards and alerts.',
+      'Built a bipartite graph of account-product purchase history in Google BigQuery and computed account Jaccard similarities for a collaborative filtering baseline. Integrated region, account size, item co-occurrence, temporal significance, and purchase count to address cold-start accounts. Evaluated matrix factorization and DNN models in BigQuery ML.',
     impact:
-      'Assigned medical codes in real time with 91% accuracy. Team won first place in the competition.',
-    stack: ['Databricks', 'LangGraph', 'RAG', 'FastAPI', 'React'],
+      'Selected a custom neuro-collaborative filtering model, achieving 25.5% Mean Precision @1.',
+    stack: ['Google BigQuery', 'BigQuery ML', 'SQL', 'Collaborative Filtering'],
   },
   {
-    name: 'EnergyAI',
+    name: 'Lescribe — Multi-Agent Clinical Coding Assistant',
+    meta: 'MSOE AI Club Innovation Lab Competition | Team of 5 | Spring 2026',
     summary:
-      'Individual full-stack recommendation system for energy drink preferences with a React/TypeScript frontend and Python FastAPI backend.',
+      'Built a clinical state extraction agent to retrieve chief complaints, symptoms, diagnoses, and procedures from doctor-patient transcripts. Designed a multi-agent LangGraph pipeline with delegator, ICD/CPT coding, and aggregator agents enhanced by knowledge graph search and RAG. Deployed a scalable Databricks app and coding analytics dashboard with automated alerts to detect potential pandemics.',
     impact:
-      'Implemented Supabase-backed user accounts, product data, and fridge inventory tracking with an embedding-based recommendation model.',
-    stack: ['React', 'TypeScript', 'FastAPI', 'Supabase', 'Python'],
+      'Won first place among 10 teams with 91% overall coding accuracy.',
+    stack: ['Databricks', 'LangGraph', 'RAG', 'Knowledge Graphs', 'LLM Agents'],
   },
   {
-    name: 'Qual-V | MSOE AI Club Innovation Lab Competition (Xorbix)',
+    name: 'Qual-V — Computer Vision QA System',
+    meta: 'MSOE AI Club Innovation Lab Competition | Team of 8 | Fall 2025',
     summary:
-      'Created an autonomous quality assurance system that can detect product defects in real time. Trained YOLO models for product detection and classification. Designed a post-training pipeline in Databricks to integrate human-in-the-loop feedback.',
+      'Created a real-time inference pipeline that processes frames from a LiveKit server. Trained YOLO models to classify products as damaged or intact and identify dents, holes, and scratches. Designed a Databricks post-training pipeline that integrates human-in-the-loop feedback to retrain and update model weights.',
     impact:
-      'Identified defects with 96% accuracy. Team won first place in the competition.',
+      'Won first place with 96.4% binary classification accuracy and 78.0% defect classification accuracy.',
     stack: ['YOLO', 'Databricks', 'ML', 'LiveKit', 'Computer Vision', 'Python'],
-  },
-]
-
-export const educationPhotos: InlinePhoto[] = [
-  {
-    src: grad,
-    alt: 'Graduation portrait outdoors in a cap and gown.',
-  },
-  {
-    src: check,
-    alt: 'Celebratory check presentation at a competition.',
-  },
-]
-
-export const projectPhotos: InlinePhoto[] = [
-  {
-    src: trees,
-    alt: 'Trees and sky at a campus walkway.',
-  },
-  {
-    src: robot,
-    alt: 'Robotic hardware on display.',
-  },
-]
-
-export const skillPhotos: InlinePhoto[] = [
-  {
-    src: sit,
-    alt: 'Casual seated portrait.',
-  },
-]
-
-export const involvementPhotos: InlinePhoto[] = [
-  {
-    src: speaking,
-    alt: 'Miles speaking at a podium during a presentation.',
-  },
-]
-
-export const workPhotos: InlinePhoto[] = [
-  {
-    src: winners,
-    alt: 'Project team holding a first place check on stage.',
   },
 ]
 
@@ -136,7 +86,7 @@ export const education: EducationItem[] = [
   {
     degree: 'B.S. Computer Science',
     school: 'Milwaukee School of Engineering',
-    meta: 'GPA 3.84 | Expected December 2027',
+    meta: 'Math Minor | GPA 3.88 | Expected December 2027',
   },
   {
     degree: 'M.S. Machine Learning',
@@ -148,39 +98,43 @@ export const education: EducationItem[] = [
 export const skills: SkillGroup[] = [
   {
     category: 'Programming Languages',
-    items: ['Python', 'Java', 'C/C++', 'R', 'SQL', 'Assembly', 'TypeScript'],
-  },
-  {
-    category: 'Frameworks & Tools',
-    items: ['Git', 'React', 'FastAPI', 'LangGraph', 'Databricks', 'CI/CD', 'Linux', 'Enterprise Architect'],
+    items: ['Python', 'SQL', 'Java', 'C/C++', 'R', 'TypeScript'],
   },
   {
     category: 'AI / ML',
-    items: ['Computer Vision', 'Supervised ML', 'LLMs', 'NLP', 'RAG', 'Agents'],
+    items: ['PyTorch', 'Supervised ML', 'LLMs', 'NLP', 'RAG', 'Computer Vision', 'Agents'],
+  },
+  {
+    category: 'Data & Cloud',
+    items: ['Databricks', 'Google BigQuery', 'Apache Airflow'],
+  },
+  {
+    category: 'Frameworks & Tools',
+    items: ['Git', 'FastAPI', 'LangGraph', 'React'],
   },
 ]
 
 export const involvement: TimelineItem[] = [
   {
-    title: 'Member',
-    org: 'AI Club',
+    title: 'Executive Board (Technical Strategist), Mentor',
+    org: 'MSOE AI Club',
     period: 'September 2024 - Present',
-    detail: '10 hrs per wk',
+    detail: '7 hrs per wk',
   },
   {
     title: 'Member',
-    org: 'MSOE Pep Band & Jazz Band',
-    period: 'September 2024 - Present',
-    detail: '5 hrs per wk',
+    org: 'Jazz Band',
+    period: 'November 2024 - Present',
+    detail: '3 hrs per wk',
   },
   {
     title: 'Member',
     org: 'Rock Climbing Club',
     period: 'September 2025 - Present',
-    detail: '5 hrs per wk',
+    detail: '2 hrs per wk',
   },
   {
-    title: 'Former Scout',
+    title: 'Eagle Scout',
     org: 'Boy Scouts of America',
     period: 'September 2017 - October 2023',
     detail: 'Eagle Scout earned June 2022',
@@ -195,9 +149,10 @@ export const involvement: TimelineItem[] = [
 
 export const work: TimelineItem[] = [
   {
-    title: 'Cashier',
-    org: "Pick 'n Save",
-    period: 'September 2022 - Present',
-    detail: '40 hrs per wk during summer',
+    title: 'Data Engineer Intern',
+    org: 'Brady Corporation | Milwaukee, WI',
+    period: 'May 2026 - August 2026',
+    detail:
+      'Maintained and optimized 15+ automated ETL pipelines using Python, SQL, and Apache Airflow to reliably move data from diverse sources into Google BigQuery. Created automated checks and balance reports to verify file counts and detect missing records, minimizing data incidents. Developed alerts for hung or long-running DAGs to save compute time and increase efficiency.',
   },
 ]
